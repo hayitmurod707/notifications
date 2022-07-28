@@ -1,3 +1,4 @@
+import { string } from 'prop-types';
 import React from 'react';
 import { Slide, toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -123,6 +124,12 @@ const CloseButton = ({ type }) => (
 		</svg>
 	</button>
 );
+CloseButton.defaultProps = {
+	type: 'info',
+};
+CloseButton.propTypes = {
+	type: string,
+};
 const Notifications = () => (
 	<StyledElement>
 		<ToastContainer {...options} />
@@ -132,7 +139,7 @@ const Notifications = () => (
 export const showNotification = ({
 	autoClose = false,
 	message = 'Not entered message',
-	type,
+	type = 'info',
 }) => {
 	const types = ['info', 'warning', 'success', 'error'];
 	const option = autoClose
