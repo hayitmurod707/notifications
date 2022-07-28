@@ -9,32 +9,32 @@ import styled, { createGlobalStyle } from 'styled-components';
 // success color #008000
 // text color #000000
 // warning color #ffff00
-// const options = {
-// 	autoClose: false, // false or number millisecond
-// 	bodyClassName: '', // string
-// 	className: '', // string
-// 	closeButton: <CloseButton />, // false or ReactNode
-// 	closeOnClick: true, // boolean
-// 	containerId: '', // string
-// 	draggable: true, // boolean
-// 	draggableDirection: 'x', // x or y
-// 	draggablePercent: 80, // number from 0 to 100
-// 	enableMultiContainer: '', // boolean
-// 	hideProgressBar: false, // boolean
-// 	limit: '', // Integer number
-// 	newestOnTop: true, // boolean
-// 	pauseOnFocusLoss: true, // boolean
-// 	pauseOnHover: true, // boolean
-// 	position: 'top-right', // string
-// 	progressClassName: '', // string
-// 	progressStyle: {}, // object
-// 	role: 'alert', // string
-// 	rtl: false, // boolean
-// 	style: {}, // object
-// 	theme: 'light', // light or dark string
-// 	toastClassName: '', // string
-// 	transition: Slide, // [Slide, Bounce, Zoom, Flip]
-// };
+const options = {
+	// autoClose: false, // false or number millisecond
+	// bodyClassName: '', // string
+	// className: '', // string
+	// closeButton: <CloseButton />, // false or ReactNode
+	// closeOnClick: true, // boolean
+	// containerId: '', // string
+	// draggable: true, // boolean
+	// draggableDirection: 'x', // x or y
+	// draggablePercent: 80, // number from 0 to 100
+	// enableMultiContainer: '', // boolean
+	// hideProgressBar: false, // boolean
+	// limit: '', // Integer number
+	newestOnTop: true, // boolean
+	// pauseOnFocusLoss: true, // boolean
+	// pauseOnHover: true, // boolean
+	// position: 'top-right', // string
+	// progressClassName: '', // string
+	// progressStyle: {}, // object
+	// role: 'alert', // string
+	// rtl: false, // boolean
+	// style: {}, // object
+	// theme: 'light', // string oneOf ['light', 'dark']
+	// toastClassName: '', // string
+	transition: Slide, // oneOf [Slide, Bounce, Zoom, Flip]
+};
 const Styles = createGlobalStyle`
    :root {
       --toastify-icon-color-error: #ff0000;
@@ -125,7 +125,7 @@ const CloseButton = ({ type }) => (
 );
 const Notifications = () => (
 	<StyledElement>
-		<ToastContainer newestOnTop={true} transition={Slide} />
+		<ToastContainer {...options} />
 		<Styles />
 	</StyledElement>
 );
