@@ -8,9 +8,9 @@ const Button = styled.button`
 	cursor: pointer;
 	font-size: 16px;
 	height: 48px;
+	margin: 0 10px;
 	outline: none;
 	width: 200px;
-	margin: 0 10px;
 `;
 const App = () => (
 	<>

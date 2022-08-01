@@ -68,7 +68,6 @@ const StyledElement = styled.section`
 				background-color: #ffffff;
 				border-radius: 50%;
 				border: none;
-				color: #000000;
 				cursor: pointer;
 				display: flex;
 				height: 21px;
