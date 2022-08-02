@@ -141,7 +141,7 @@ export const showNotification = ({
 	type = 'info',
 }) => {
 	const types = ['info', 'warning', 'success', 'error'];
-	const option = autoClose
+	const options = autoClose
 		? { autoClose: 5000, closeButton: false, style: { overflow: 'hidden' } }
 		: {
 				autoClose: false,
@@ -149,9 +149,9 @@ export const showNotification = ({
 				style: { overflow: 'initial' },
 		  };
 	if (types.includes(type)) {
-		toast[type](message, option);
+		toast[type](message, options);
 	} else {
-		toast(message, option);
+		toast(message, options);
 	}
 };
 export default Notifications;
