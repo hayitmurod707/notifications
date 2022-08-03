@@ -10,7 +10,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 // success color #008000
 // text color #000000
 // warning color #ffff00
-const options = {
+const defaultOptions = {
 	// autoClose: false, // false or number millisecond
 	// bodyClassName: '', // string
 	// className: '', // string
@@ -23,7 +23,7 @@ const options = {
 	// enableMultiContainer: '', // boolean
 	// hideProgressBar: false, // boolean
 	// limit: '', // Integer number
-	newestOnTop: true, // boolean
+	// newestOnTop: false, // boolean
 	// pauseOnFocusLoss: true, // boolean
 	// pauseOnHover: true, // boolean
 	// position: 'top-right', // string
@@ -34,6 +34,8 @@ const options = {
 	// style: {}, // object
 	// theme: 'light', // string oneOf ['light', 'dark']
 	// toastClassName: '', // string
+	// transition: Slide, // oneOf [Slide, Bounce, Zoom, Flip]
+	newestOnTop: true, // boolean
 	transition: Slide, // oneOf [Slide, Bounce, Zoom, Flip]
 };
 const Styles = createGlobalStyle`
@@ -58,6 +60,9 @@ const StyledElement = styled.section`
 			font-size: 15px;
 			font-weight: 600;
 			padding: 14px;
+			&:last-child {
+				margin: 0;
+			}
 			& .Toastify__toast-body {
 				margin: 0;
 				padding: 0 !important;
@@ -65,7 +70,6 @@ const StyledElement = styled.section`
 			}
 			& .Toastify__toast-close {
 				align-items: center;
-				background-color: #ffffff;
 				border-radius: 50%;
 				border: none;
 				cursor: pointer;
@@ -123,15 +127,11 @@ const CloseButton = ({ type }) => (
 		</svg>
 	</button>
 );
-CloseButton.defaultProps = {
-	type: 'info',
-};
-CloseButton.propTypes = {
-	type: string,
-};
+CloseButton.defaultProps = { type: 'info' };
+CloseButton.propTypes = { type: string };
 const Notifications = () => (
 	<StyledElement>
-		<ToastContainer {...options} />
+		<ToastContainer {...defaultOptions} />
 		<Styles />
 	</StyledElement>
 );
