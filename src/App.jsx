@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import Notifications, { showNotification } from './Notifications';
 const Button = styled.button`
