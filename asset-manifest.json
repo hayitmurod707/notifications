@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/notifications/static/css/main.3d31118c.css",
+    "main.js": "/notifications/static/js/main.0cbde33b.js",
+    "static/media/Gilroy-Medium.woff2": "/notifications/static/media/Gilroy-Medium.e2130cf5bbb93f1cc9e0.woff2",
+    "index.html": "/notifications/index.html",
+    "main.3d31118c.css.map": "/notifications/static/css/main.3d31118c.css.map",
+    "main.0cbde33b.js.map": "/notifications/static/js/main.0cbde33b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3d31118c.css",
+    "static/js/main.0cbde33b.js"
+  ]
+}
