@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Notifications, { showNotification } from "./Notifications";
+import Notifications, { notification } from "./Notifications";
 const Button = styled.button`
 	border-radius: 8px;
 	border: none;
@@ -20,18 +20,15 @@ const App = () => (
 			<h1 style={{ textAlign: "center" }}>
 				<Button
 					style={{ backgroundColor: "#0000ff" }}
-					onClick={() =>
-						showNotification({ message: "Info message", type: "info" })
-					}
+					onClick={() => notification("Info message", { type: "info" })}
 				>
 					Info
 				</Button>
 				<Button
 					style={{ backgroundColor: "#0000ff" }}
 					onClick={() =>
-						showNotification({
+						notification("Info message", {
 							autoClose: true,
-							message: "Info message",
 							type: "info",
 						})
 					}
@@ -42,18 +39,15 @@ const App = () => (
 			<h1 style={{ textAlign: "center" }}>
 				<Button
 					style={{ backgroundColor: "#ff0000" }}
-					onClick={() =>
-						showNotification({ message: "Error message", type: "error" })
-					}
+					onClick={() => notification("Error message", { type: "error" })}
 				>
 					Error
 				</Button>
 				<Button
 					style={{ backgroundColor: "#ff0000" }}
 					onClick={() =>
-						showNotification({
+						notification("Error message", {
 							autoClose: true,
-							message: "Error message",
 							type: "error",
 						})
 					}
@@ -65,8 +59,7 @@ const App = () => (
 				<Button
 					style={{ backgroundColor: "#ffff00" }}
 					onClick={() =>
-						showNotification({
-							message: "Warning message",
+						notification("Warning message", {
 							type: "warning",
 						})
 					}
@@ -76,9 +69,8 @@ const App = () => (
 				<Button
 					style={{ backgroundColor: "#ffff00" }}
 					onClick={() =>
-						showNotification({
+						notification("Warning message", {
 							autoClose: true,
-							message: "Warning message",
 							type: "warning",
 						})
 					}
@@ -90,8 +82,7 @@ const App = () => (
 				<Button
 					style={{ backgroundColor: "#008000" }}
 					onClick={() =>
-						showNotification({
-							message: "Success message",
+						notification("Success message", {
 							type: "success",
 						})
 					}
@@ -101,9 +92,8 @@ const App = () => (
 				<Button
 					style={{ backgroundColor: "#008000" }}
 					onClick={() =>
-						showNotification({
+						notification("Success message", {
 							autoClose: true,
-							message: "Success message",
 							type: "success",
 						})
 					}
@@ -115,8 +105,7 @@ const App = () => (
 				<Button
 					style={{ backgroundColor: "grey" }}
 					onClick={() =>
-						showNotification({
-							message: "Default message",
+						notification("Default message", {
 							type: "default",
 						})
 					}
@@ -126,9 +115,8 @@ const App = () => (
 				<Button
 					style={{ backgroundColor: "grey" }}
 					onClick={() =>
-						showNotification({
+						notification("Default message", {
 							autoClose: true,
-							message: "Default message",
 							type: "default",
 						})
 					}

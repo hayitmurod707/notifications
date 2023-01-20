@@ -134,16 +134,25 @@ const Notifications = () => (
 		<Styles />
 	</StyledElement>
 );
-export const showNotification = ({
-	autoClose = false,
+export const notification = (
 	message = "Not entered message",
-	type = "info",
-}) => {
+	{ autoClose = false, type = "info", onClose, onOpen, onClick }
+) => {
 	const options = autoClose
-		? { autoClose: 5000, closeButton: false, style: { overflow: "hidden" } }
+		? {
+				autoClose: 5000,
+				closeButton: false,
+				onClick,
+				onClose,
+				onOpen,
+				style: { overflow: "hidden" },
+		  }
 		: {
 				autoClose: false,
-				closeButton: <CloseButton />,
+				closeButton: <CloseButton type={type} />,
+				onClick,
+				onClose,
+				onOpen,
 				style: { overflow: "initial" },
 		  };
 	const hasType = ["error", "info", "success", "warning"].includes(type);
