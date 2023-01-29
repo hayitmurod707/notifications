@@ -136,7 +136,7 @@ const Notifications = () => (
 	<StyledElement>
 		<ToastContainer {...defaultOptions} />
 		<Styles />
-		<audio src={Sound} id="notification-sound" />
+		<audio src={Sound} id="react-toastify-sound" />
 	</StyledElement>
 );
 export const notification = (
@@ -147,7 +147,7 @@ export const notification = (
 		if (typeof onOpen === "function") {
 			onOpen();
 		}
-		const audio = document.getElementById("notification-sound");
+		const audio = document.getElementById("react-toastify-sound");
 		audio.currentTime = 0;
 		audio.play();
 	};
