@@ -17,7 +17,14 @@ const App = () => (
 			<h1 style={{ textAlign: "center" }}>
 				Notifications component with react-toastify
 			</h1>
-			<h1 style={{ textAlign: "center" }}>
+			<div
+				style={{
+					alignItems: "center",
+					display: "flex",
+					justifyContent: "center",
+					margin: "20px 0",
+				}}
+			>
 				<Button
 					style={{ backgroundColor: "#0000ff" }}
 					onClick={() => notification("Info message", { type: "info" })}
@@ -35,8 +42,15 @@ const App = () => (
 				>
 					Auto Close Info
 				</Button>
-			</h1>
-			<h1 style={{ textAlign: "center" }}>
+			</div>
+			<div
+				style={{
+					alignItems: "center",
+					display: "flex",
+					justifyContent: "center",
+					margin: "20px 0",
+				}}
+			>
 				<Button
 					style={{ backgroundColor: "#ff0000" }}
 					onClick={() => notification("Error message", { type: "error" })}
@@ -54,8 +68,15 @@ const App = () => (
 				>
 					Auto Close Error
 				</Button>
-			</h1>
-			<h1 style={{ textAlign: "center" }}>
+			</div>
+			<div
+				style={{
+					alignItems: "center",
+					display: "flex",
+					justifyContent: "center",
+					margin: "20px 0",
+				}}
+			>
 				<Button
 					style={{ backgroundColor: "#ffff00" }}
 					onClick={() =>
@@ -77,8 +98,15 @@ const App = () => (
 				>
 					Auto Close Warning
 				</Button>
-			</h1>
-			<h1 style={{ textAlign: "center" }}>
+			</div>
+			<div
+				style={{
+					alignItems: "center",
+					display: "flex",
+					justifyContent: "center",
+					margin: "20px 0",
+				}}
+			>
 				<Button
 					style={{ backgroundColor: "#008000" }}
 					onClick={() =>
@@ -100,8 +128,15 @@ const App = () => (
 				>
 					Auto Close Success
 				</Button>
-			</h1>
-			<h1 style={{ textAlign: "center" }}>
+			</div>
+			<div
+				style={{
+					alignItems: "center",
+					display: "flex",
+					justifyContent: "center",
+					margin: "20px 0",
+				}}
+			>
 				<Button
 					style={{ backgroundColor: "grey" }}
 					onClick={() =>
@@ -123,7 +158,7 @@ const App = () => (
 				>
 					Auto Close Default
 				</Button>
-			</h1>
+			</div>
 		</section>
 		<Notifications />
 	</>

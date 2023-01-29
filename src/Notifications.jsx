@@ -2,6 +2,7 @@ import { string } from "prop-types";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styled, { createGlobalStyle } from "styled-components";
+import Sound from "./notification.mp3";
 // danger color #ff0000
 // info color #0000ff
 // light color #ffffff
@@ -48,7 +49,7 @@ const Styles = createGlobalStyle`
 const StyledElement = styled.section`
 	& .Toastify__toast-container {
 		padding: 0;
-		right: 18px;
+		right: 20px;
 		top: 20px;
 		& .Toastify__toast {
 			border-radius: 14px;
@@ -132,19 +133,28 @@ const Notifications = () => (
 	<StyledElement>
 		<ToastContainer {...defaultOptions} />
 		<Styles />
+		<audio src={Sound} id="notification-sound" />
 	</StyledElement>
 );
 export const notification = (
 	message = "Not entered message",
 	{ autoClose = false, type = "info", onClose, onOpen, onClick }
 ) => {
+	const openNotification = () => {
+		if (typeof onOpen === "function") {
+			onOpen();
+		}
+		const audio = document.getElementById("notification-sound");
+		audio.currentTime = 0;
+		audio.play();
+	};
 	const options = autoClose
 		? {
 				autoClose: 5000,
 				closeButton: false,
 				onClick,
 				onClose,
-				onOpen,
+				onOpen: openNotification,
 				style: { overflow: "hidden" },
 		  }
 		: {
@@ -152,7 +162,7 @@ export const notification = (
 				closeButton: <CloseButton type={type} />,
 				onClick,
 				onClose,
-				onOpen,
+				onOpen: openNotification,
 				style: { overflow: "initial" },
 		  };
 	const hasType = ["error", "info", "success", "warning"].includes(type);
