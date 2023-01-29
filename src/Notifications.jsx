@@ -47,6 +47,9 @@ const Styles = createGlobalStyle`
 	}
 `;
 const StyledElement = styled.section`
+	& audio {
+		display: none;
+	}
 	& .Toastify__toast-container {
 		padding: 0;
 		right: 20px;
