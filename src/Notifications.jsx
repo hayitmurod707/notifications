@@ -139,10 +139,14 @@ const Notifications = () => (
 		<audio src={Sound} id="react-toastify-sound" />
 	</StyledElement>
 );
-export const notification = (
-	message = "Not entered message",
-	{ autoClose = false, type = "info", onClose, onOpen, onClick }
-) => {
+export const notification = (message = "Not entered message", options = {}) => {
+	const {
+		autoClose = false,
+		type = "info",
+		onClose,
+		onOpen,
+		onClick,
+	} = options;
 	const openNotification = () => {
 		if (typeof onOpen === "function") {
 			onOpen();
@@ -151,7 +155,7 @@ export const notification = (
 		audio.currentTime = 0;
 		audio.play();
 	};
-	const options = autoClose
+	const option = autoClose
 		? {
 				autoClose: 5000,
 				closeButton: false,
@@ -170,9 +174,9 @@ export const notification = (
 		  };
 	const hasType = ["error", "info", "success", "warning"].includes(type);
 	if (hasType) {
-		toast[type](message, options);
+		toast[type](message, option);
 	} else {
-		toast(message, options);
+		toast(message, option);
 	}
 };
 export default Notifications;
