@@ -17,7 +17,7 @@ const App = () => (
 			<h1 style={{ textAlign: "center" }}>
 				Notifications component with react-toastify
 			</h1>
-			<h4>
+			<h4 style={{ textAlign: "center" }}>
 				<a href="https://github.com/hayitmurod707/notifications">Github</a>
 			</h4>
 			<div
