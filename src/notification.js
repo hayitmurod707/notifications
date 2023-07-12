@@ -1,5 +1,5 @@
 import { string } from 'prop-types';
-import { toast } from 'react-toastify';
+import { Bounce, Flip, Slide, Zoom, toast } from 'react-toastify';
 const CloseButton = ({ type }) => (
    <button className='Toastify__toast-close' data-type={type} type='button'>
       <svg width='10' height='10' viewBox='0 0 14 14' fill='none'>
@@ -20,6 +20,9 @@ const notification = (message = 'Not entered message', options = {}) => {
       onOpen,
       onClick,
    } = options;
+   const transition = [Bounce, Flip, Slide, Zoom][
+      Math.floor(Math.random() * 4)
+   ];
    const openNotification = () => {
       if (typeof onOpen === 'function') {
          onOpen();
@@ -36,6 +39,7 @@ const notification = (message = 'Not entered message', options = {}) => {
            onClose,
            onOpen: openNotification,
            style: { overflow: 'hidden' },
+           transition,
         }
       : {
            autoClose: false,
@@ -44,6 +48,7 @@ const notification = (message = 'Not entered message', options = {}) => {
            onClose,
            onOpen: openNotification,
            style: { overflow: 'initial' },
+           transition,
         };
    const hasType = ['error', 'info', 'success', 'warning'].includes(type);
    if (hasType) {
