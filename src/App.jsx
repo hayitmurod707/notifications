@@ -1,19 +1,20 @@
+import { Fragment } from 'react';
 import styled from 'styled-components';
 import Notifications from './Notifications';
 import notification from './notification';
 const Button = styled.button`
-   border-radius: 8px;
+   border-radius: 12px;
    border: none;
    color: #ffffff;
    cursor: pointer;
-   font-size: 16px;
-   height: 48px;
+   font-size: 17px;
+   height: 52px;
    margin: 0 10px;
    outline: none;
    width: 200px;
 `;
 const App = () => (
-   <>
+   <Fragment>
       <section>
          <h1 style={{ textAlign: 'center' }}>
             Notifications component with react-toastify
@@ -30,13 +31,13 @@ const App = () => (
             }}
          >
             <Button
-               style={{ backgroundColor: '#0071f2' }}
+               style={{ backgroundColor: '#0163f7' }}
                onClick={() => notification('Info message', { type: 'info' })}
             >
                Info
             </Button>
             <Button
-               style={{ backgroundColor: '#0071f2' }}
+               style={{ backgroundColor: '#0163f7' }}
                onClick={() =>
                   notification('Info message', {
                      autoClose: true,
@@ -56,13 +57,13 @@ const App = () => (
             }}
          >
             <Button
-               style={{ backgroundColor: '#ea1601' }}
+               style={{ backgroundColor: '#ff3b3c' }}
                onClick={() => notification('Error message', { type: 'error' })}
             >
                Error
             </Button>
             <Button
-               style={{ backgroundColor: '#ea1601' }}
+               style={{ backgroundColor: '#ff3b3c' }}
                onClick={() =>
                   notification('Error message', {
                      autoClose: true,
@@ -82,7 +83,7 @@ const App = () => (
             }}
          >
             <Button
-               style={{ backgroundColor: '#fad202' }}
+               style={{ backgroundColor: '#feda04' }}
                onClick={() =>
                   notification('Warning message', {
                      type: 'warning',
@@ -92,7 +93,7 @@ const App = () => (
                Warning
             </Button>
             <Button
-               style={{ backgroundColor: '#fad202' }}
+               style={{ backgroundColor: '#feda04' }}
                onClick={() =>
                   notification('Warning message', {
                      autoClose: true,
@@ -112,7 +113,7 @@ const App = () => (
             }}
          >
             <Button
-               style={{ backgroundColor: '#008000' }}
+               style={{ backgroundColor: '#3bc148' }}
                onClick={() =>
                   notification('Success message', {
                      type: 'success',
@@ -122,7 +123,7 @@ const App = () => (
                Success
             </Button>
             <Button
-               style={{ backgroundColor: '#008000' }}
+               style={{ backgroundColor: '#3bc148' }}
                onClick={() =>
                   notification('Success message', {
                      autoClose: true,
@@ -142,7 +143,7 @@ const App = () => (
             }}
          >
             <Button
-               style={{ backgroundColor: 'grey' }}
+               style={{ backgroundColor: '#a1a1aa' }}
                onClick={() =>
                   notification('Default message', {
                      type: 'default',
@@ -152,7 +153,7 @@ const App = () => (
                Default
             </Button>
             <Button
-               style={{ backgroundColor: 'grey' }}
+               style={{ backgroundColor: '#a1a1aa' }}
                onClick={() =>
                   notification('Default message', {
                      autoClose: true,
@@ -165,6 +166,6 @@ const App = () => (
          </div>
       </section>
       <Notifications />
-   </>
+   </Fragment>
 );
 export default App;
