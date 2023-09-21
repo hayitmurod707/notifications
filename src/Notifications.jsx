@@ -99,28 +99,25 @@ const StyledToastify = styled(ToastContainer)`
       & .Toastify__toast-body {
          color: #11181c;
          margin: 0;
-         padding: 0 14px 0 0 !important;
+         padding: 0 18px 0 0 !important;
          width: 100%;
       }
       & .Toastify__toast-close {
          align-items: center;
-         background-color: transparent;
+         background-color: #e4e4e7;
          border-radius: 50%;
          border: none;
          color: #11181c;
          cursor: pointer;
          display: flex;
-         height: 26px;
+         height: 25px;
          justify-content: center;
          outline: none;
          padding: 0;
          position: absolute;
          right: 7px;
          top: 7px;
-         width: 26px;
-         &:hover {
-            background-color: #e4e4e7;
-         }
+         width: 25px;
       }
    }
 `;
