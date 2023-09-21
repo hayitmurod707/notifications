@@ -104,7 +104,7 @@ const StyledToastify = styled(ToastContainer)`
       }
       & .Toastify__toast-close {
          align-items: center;
-         background-color: #e4e4e7;
+         background-color: #e7e7e7;
          border-radius: 50%;
          border: none;
          color: #11181c;
