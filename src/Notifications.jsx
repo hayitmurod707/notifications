@@ -84,6 +84,11 @@ const StyledToastify = styled(ToastContainer)`
    padding: 0;
    right: 20px;
    top: 20px;
+   @media (max-width: 480px) {
+      padding: 14px 10px 10px 10px;
+      right: 0;
+      top: 0;
+   }
    & .Toastify__toast {
       box-shadow: 0 1px 20px 0 var(--toastify-shadow-light),
          0 1px 20px 0 var(--toastify-shadow-light);
@@ -95,6 +100,9 @@ const StyledToastify = styled(ToastContainer)`
       padding: 14px;
       &:last-child {
          margin: 0;
+      }
+      @media (max-width: 480px) {
+         margin: 0 0 14px 0;
       }
       & .Toastify__toast-body {
          color: #11181c;
