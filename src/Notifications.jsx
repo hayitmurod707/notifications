@@ -118,14 +118,14 @@ const StyledToastify = styled(ToastContainer)`
          color: #11181c;
          cursor: pointer;
          display: flex;
-         height: 25px;
+         height: 23px;
          justify-content: center;
          outline: none;
          padding: 0;
          position: absolute;
          right: 7px;
          top: 7px;
-         width: 25px;
+         width: 23px;
       }
    }
 `;
